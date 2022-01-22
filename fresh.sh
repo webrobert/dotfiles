@@ -39,12 +39,12 @@ pecl install imagick redis swoole
 $HOME/.composer/vendor/bin/valet install
 
 # Create a Sites directory
-mkdir $HOME/Sites
+mkdir $HOME/Development/Websites
 
 # Create sites subdirectories
-mkdir $HOME/Sites/blade-ui-kit
-mkdir $HOME/Sites/eventsauce
-mkdir $HOME/Sites/laravel
+# mkdir $HOME/Sites/blade-ui-kit
+# mkdir $HOME/Sites/eventsauce
+# mkdir $HOME/Sites/laravel
 
 # Clone Github repositories
 $DOTFILES/clone.sh
