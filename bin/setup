@@ -5,8 +5,8 @@ echo "Setting up test project..."
 REPOSITORY=$1
 DIRECTORY="./$2"
 
-if [[ $PWD != "$HOME/Sites" ]]; then
-    echo "You can only setup projects in the $HOME/Sites directory."
+if [[ $PWD != "$HOME/Development/Websites" ]]; then
+    echo "You can only setup projects in the $HOME/Development/Websites directory."
 
     exit 1
 fi
@@ -32,4 +32,4 @@ php artisan migrate:fresh --seed
 npm install
 npm run dev
 
-open -a "/Applications/Visual Studio Code.app" "`pwd`"
+open -a "/Applications/Phpstorm.app" "`pwd`"
