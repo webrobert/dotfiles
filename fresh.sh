@@ -39,6 +39,7 @@ pecl install imagick redis swoole
 $HOME/.composer/vendor/bin/valet install
 
 # Create a Sites directory
+mkdir $HOME/Development
 mkdir $HOME/Development/Websites
 
 # Create sites subdirectories
