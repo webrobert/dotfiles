@@ -20,8 +20,8 @@ alias fresh="php artisan migrate:fresh --seed"
 alias seed="php artisan db:seed"
 
 # PHP
-# alias cfresh="rm -rf vendor/ composer.lock && composer i"
-# alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
+alias cfresh="rm -rf vendor/ composer.lock && composer i"
+alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
