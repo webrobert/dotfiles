@@ -54,6 +54,7 @@ cask 'tableplus'
 cask 'the-unarchiver'
 cask 'transmit'
 cask 'zoom'
+cask 'malwarebytes'
 
 # Quicklook
 cask 'qlmarkdown'
