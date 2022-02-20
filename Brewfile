@@ -11,11 +11,11 @@ tap 'nicoverbruggen/homebrew-cask' # install apps via homebrew cask
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
 # brew 'ffmpeg'
-# brew 'gh'
-# brew 'git'
-# brew 'gnupg'
-# brew 'grep'
-# brew 'httpie'
+brew 'gh'
+brew 'git'
+brew 'gnupg'
+brew 'grep'
+brew 'httpie'
 
 # brew 'mackup' # maybe try this?
 
