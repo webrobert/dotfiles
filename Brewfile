@@ -11,16 +11,16 @@ tap 'nicoverbruggen/homebrew-cask' # install apps via homebrew cask
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
 # brew 'ffmpeg'
-brew 'gh'
+# brew 'gh'
 brew 'git'
-brew 'gnupg'
-brew 'grep'
-brew 'httpie'
+# brew 'gnupg'
+# brew 'grep'
+# brew 'httpie'
 
 # brew 'mackup' # maybe try this?
 
 brew 'mas' # Mac App Store manager
-# brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
+# brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20 //  fix for failure (on the imagick build/install)
 # brew 'svn' # Needed to install fonts
 # brew 'stripe/stripe-cli/stripe'
 # brew 'stripe/stripe-mock/stripe-mock'
