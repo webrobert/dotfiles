@@ -37,4 +37,4 @@ mkdir $HOME/Sites
 $DOTFILES/clone.sh
 
 # Set macOS preferences - we will run this last because this will reload the shell
-source $DOTFILES/.macos
+source $DOTFILES/.macos # requires password
