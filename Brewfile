@@ -55,9 +55,9 @@ cask 'phpstorm'
 cask 'tableplus'
 cask 'the-unarchiver'
 cask 'transmit'
-cask 'malwarebytes'
-cask 'lando'
-# cask 'zoom'
+cask 'malwarebytes' # requires password
+cask 'lando' # requires password
+cask 'zoom' # requires password
 
 # Quicklook
 cask 'qlmarkdown'
