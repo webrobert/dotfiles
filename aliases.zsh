@@ -29,6 +29,7 @@ alias watch="npm run watch"
 
 # Docker
 # alias docker-composer="docker-compose"
+alias spin="~/.dotfiles/spin-laravel.sh" # with a lando file
 
 # SQL Server
 # alias mssql="docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=LaravelWow1986! -p 1433:1433 mcr.microsoft.com/mssql/server:2017-latest"
