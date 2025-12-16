@@ -1,86 +1,88 @@
-<p align="center"><img src="art/banner-2x.png"></p>
+# Dotfiles
 
-## Introduction
+Hi Future Robert (and other Dev's),
 
-This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything needed to install my preferred setup of macOS is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy!
+This repository contains my personal macOS setup and dotfiles. *[Dries blog post](https://driesvints.com/blog/getting-started-with-dotfiles) shows his orginal files with way more settings. I have deleted settings not relevant to my work.*
 
-📖 - [Read the blog post](https://driesvints.com/blog/getting-started-with-dotfiles)  
-📺 - [Watch the screencast on Laracasts](https://laracasts.com/series/guest-spotlight/episodes/1)  
-💡 - [Learn how to build your own dotfiles](https://github.com/driesvints/dotfiles#your-own-dotfiles)
+When getting a new Mac, I can restore my working environment quickly, predictably,
+and without guessing what I used to do.
 
-## A Fresh macOS Setup
+## What This Sets Up
 
-These instructions are for when you've already set up your dotfiles. If you want to get started with your own dotfiles you can [find instructions below](#your-own-dotfiles).
+Running the setup script will configure a macOS machine for:
 
-### Before you re-install
+- Laravel development (container-first via Docker + Lando)
+- Homebrew-managed CLI tools and applications
+- Zsh with minimal, intentional customization
+- macOS defaults I prefer for daily work
+- A single, consistent project directory: ~/Sites
 
-First, go through the checklist below to make sure you didn't forget anything before you wipe your hard drive.
+Local PHP is installed only for tooling (Composer). Runtime happens in containers.
 
-- Did you commit and push any changes/branches to your git repositories?
-- Did you remember to save all important documents from non-iCloud directories?
-- Did you save all of your work from apps which aren't synced through iCloud?
-- Did you remember to export important data from your local database?
-- Did you update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`?
+## Fresh macOS Setup
 
-### Installing macOS cleanly
+These instructions assume:
+- macOS is freshly installed
+- you’ve signed into your Apple ID
+- this machine will be used for development
 
-After going through our checklist above and making sure you backed everything up, we're going to cleanly install macOS with the latest release. Follow [this article](https://www.imore.com/how-do-clean-install-macos) to cleanly install the latest macOS version.
 
-### Setting up your Mac
+### 1. Update macOS
 
-If you did all of the above you may now follow these install instructions to setup a new Mac.
+Install all available system updates via System Settings.
 
-1. Update macOS to the latest version with the App Store
-2. [Generate a new public and private SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) by running:
+### 2. Generate or verify SSH access
 
-   ```zsh
-   curl https://raw.githubusercontent.com/webrobert/dotfiles/HEAD/ssh.sh | sh -s "webrobert@gmail.com"
-   ```
+If you already have an SSH key registered with GitHub, you can skip this step.
 
-3. Clone this repo to `~/.dotfiles` with:
+To generate a new key:
 
-    ```zsh
-    git clone git@github.com:webrobert/dotfiles.git ~/.dotfiles
-    ```
-
-4. Run the installation with:
-
-    ```zsh
-    ~/.dotfiles/fresh.sh
-    ```
-
-5. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
-6. Restart your computer to finalize the process
-
-Your Mac is now ready to use!
-
-> 💡 You can use a different location than `~/.dotfiles` if you want. Make sure you also update the reference in the [`.zshrc`](./.zshrc#L2) file.
-
-## Your Own Dotfiles
-
-**Please note that the instructions below assume you already have set up Oh My Zsh so make sure to first [install Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh#getting-started) before you continue.**
-
-If you want to start with your own dotfiles from this setup, it's pretty easy to do so. First of all you'll need to fork this repo. After that you can tweak it the way you want.
-
-Go through the [`.macos`](./.macos) file and adjust the settings to your liking. You can find much more settings at [the original script by Mathias Bynens](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) and [Kevin Suttle's macOS Defaults project](https://github.com/kevinSuttle/MacOS-Defaults).
-
-Check out the [`Brewfile`](./Brewfile) file and adjust the apps you want to install for your machine. Use [their search page](https://caskroom.github.io/search) to check if the app you want to install is available.
-
-Check out the [`aliases.zsh`](./aliases.zsh) file and add your own aliases. If you need to tweak your `$PATH` check out the [`path.zsh`](./path.zsh) file. These files get loaded in because the `$ZSH_CUSTOM` setting points to the `.dotfiles` directory. You can adjust the [`.zshrc`](./.zshrc) file to your liking to tweak your Oh My Zsh setup. More info about how to customize Oh My Zsh can be found [here](https://github.com/robbyrussell/oh-my-zsh/wiki/Customization).
-
-When installing these dotfiles for the first time you'll need to backup all of your settings with Mackup. Install Mackup and backup your settings with the commands below. Your settings will be synced to iCloud so you can use them to sync between computers and reinstall them when reinstalling your Mac. If you want to save your settings to a different directory or different storage than iCloud, [checkout the documentation](https://github.com/lra/mackup/blob/master/doc/README.md#storage). Also make sure your `.zshrc` file is symlinked from your dotfiles repo to your home directory. 
-
-```zsh
-brew install mackup
-mackup backup
+```
+curl https://raw.githubusercontent.com/webrobert/dotfiles/HEAD/ssh.sh | sh -s "your@email.com"
 ```
 
-You can tweak the shell theme, the Oh My Zsh settings and much more. Go through the files in this repo and tweak everything to your liking.
+After the script runs, copy the public key and add it to GitHub.
 
-Enjoy your own Dotfiles!
 
-## Thanks To...
+### 3. Clone this repository
 
-I first got the idea for starting this project by visiting the [GitHub does dotfiles](https://dotfiles.github.io/) project. Both [Zach Holman](https://github.com/holman/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) were great sources of inspiration. [Sourabh Bajaj](https://twitter.com/sb2nov/)'s [Mac OS X Setup Guide](http://sourabhbajaj.com/mac-setup/) proved to be invaluable. Thanks to [@subnixr](https://github.com/subnixr) for [his awesome Zsh theme](https://github.com/subnixr/minimal)! Thanks to [Caneco](https://twitter.com/caneco) for the header in this readme. And lastly, I'd like to thank [Emma Fabre](https://twitter.com/anahkiasen) for [her excellent presentation on Homebrew](https://speakerdeck.com/anahkiasen/a-storm-homebrewin) which made me migrate a lot to a [`Brewfile`](./Brewfile) and [Mackup](https://github.com/lra/mackup).
+```
+git clone git@github.com:webrobert/dotfiles.git ~/.dotfiles
+```
 
-In general, I'd like to thank every single one who open-sources their dotfiles for their effort to contribute something to the open-source community.
+### 4. Run the setup
+
+```
+bash ~/.dotfiles/fresh.sh
+```
+
+This will:
+- install Homebrew (if missing)
+- install CLI tools and applications
+- configure the shell
+- apply macOS defaults
+- create the ~/Sites directory
+- optionally clone personal repositories
+
+### 5. Restart your shell (or reboot)
+
+Some changes require a new shell session or a full restart.
+
+After that, the machine should be ready for daily work.
+
+## Daily Usage Notes
+
+- All projects live in ~/Sites
+- Docker Desktop must be opened once after installation
+- Laravel projects are run via Lando
+- Helper scripts (spin-*.sh, clone.sh) are optional conveniences
+
+This repo is meant to evolve. If something no longer reflects how I work,
+it should be updated or removed.
+
+## Inspiration & Credit
+
+This setup was influenced by the broader dotfiles community, mainly,
+- [Dries Vints](https://driesvints.com/blog/getting-started-with-dotfiles)  
+- Zach Holman
+- Mathias Bynens
