@@ -1,3 +1,54 @@
+# Aliases Menu
+aliases() {
+  cat <<'EOF'
+
+🧠 ALIAS CHEAT SHEET
+────────────────────────────────
+
+🔧 General
+  c              clear terminal
+  reloadshell    reload .zshrc
+  reloaddns      flush DNS cache
+  copyssh        copy SSH public key
+  shrug          copy ¯\_(ツ)_/¯
+  ll             pretty ls
+
+📁 Navigation
+  dotfiles       cd ~/.dotfiles
+  library        cd ~/Library
+  sites          cd ~/Sites
+
+🧱 Laravel (Lando)
+  a              lando artisan
+  fresh          migrate:fresh --seed
+  seed           db:seed
+
+📦 JavaScript
+  nfresh         reinstall node_modules
+  watch          npm run watch
+
+🚀 Projects
+  spin           new Laravel project
+  spinclone      clone existing project
+
+🧬 Git
+  gst            git status
+  gb             git branch
+  gc             git checkout
+  gl             git log --oneline
+  commit "msg"   add all + commit
+  amend          amend last commit
+  wip            quick WIP commit
+  stash          stash incl untracked
+  pop            pop stash
+  unstage        unstage all
+  force          force-with-lease push
+  nuke           hard reset + clean
+
+────────────────────────────────
+EOF
+}
+
 # Shortcuts
 alias copyssh="pbcopy < ${HOME}/.ssh/id_ed25519.pub 2>/dev/null || echo 'No ~/.ssh/id_ed25519.pub found'"
 alias reloadshell="source $HOME/.zshrc"
