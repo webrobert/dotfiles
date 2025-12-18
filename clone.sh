@@ -2,8 +2,22 @@
 
 echo "Cloning repositories..."
 
-SITES=$HOME/Development/Websites
+SITES="$HOME/Sites"
+
+mkdir -p "$SITES"
+
+clone() {
+  REPO="$1"
+  DEST="$2"
+
+  if [ -d "$DEST/.git" ]; then
+    echo "✓ Skipping $(basename "$DEST") (already exists)"
+  else
+    echo "→ Cloning $(basename "$DEST")"
+    git clone "$REPO" "$DEST"
+  fi
+}
 
 # Personal
-git clone git@github.com:webrobert/graham.git $SITES/graham
-git clone git@github.com:webrobert/pantry.git $SITES/pantry
+# clone git@github.com:webrobert/graham.git "$SITES/graham"
+clone git@github.com:webrobert/pantry.git "$SITES/pantry"
